@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
@@ -9,7 +9,10 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home/Home'
+import ShowProduct from '../ShowProduct/ShowProduct'
 import IndexProducts from '../IndexProducts/IndexProducts'
+import ProductCreate from '../ProductCreate/ProductCreate'
+import ProductEdit from '../ProductEdit/ProductEdit'
 
 class App extends Component {
   constructor () {
@@ -45,6 +48,14 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/products' component= {IndexProducts} />
+          <Route exact path='/products/:id' component={ShowProduct} />
+          <AuthenticatedRoute user={user} exact path="/create-product" render={() => (
+            < ProductCreate msgAlert={this.msgAlert} user={user}/>
+          )}/>
+
+          <AuthenticatedRoute user={user} exact path="/products/:id/edit" render={({ match }) => (
+            < ProductEdit msgAlert={this.msgAlert} user={user} match={match}/>
+          )}/>
           <Route exact path='/' component= {Home} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -64,4 +75,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App)
