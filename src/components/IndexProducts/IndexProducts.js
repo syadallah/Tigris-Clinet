@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Layout from '../Shared/Layout'
-import { Link } from 'react-router-dom'
 
 class Products extends Component {
   constructor () {
@@ -19,6 +18,7 @@ class Products extends Component {
     axios(`${apiUrl}/products`)
       .then(res => {
         this.setState({ products: res.data.products })
+        console.log(this.state)
       })
       .catch(console.error)
   }
@@ -34,7 +34,7 @@ class Products extends Component {
         // We have products to display
         productHtml = products.map(product => (
           <li key={product.id}>
-            <Link to={`/products/${product.id}`}>{product.name}</Link>
+            <h4>{`${product.name}`}</h4>
             <h4>Price:{`${product.price}`}$</h4>
             <h5>Description{`${product.description}`}</h5>
           </li>

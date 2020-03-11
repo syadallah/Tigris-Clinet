@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Layout from '../Shared/Layout'
-
-class MyProducts extends Component {
+import { Link } from 'react-router-dom'
+class MyStore extends Component {
   constructor () {
     super()
 
@@ -24,23 +24,29 @@ class MyProducts extends Component {
 
   render () {
     // Destructuring
-    const { products } = this.state
+    let { products } = this.state
     let productHtml
-
+    console.log(this.props.user.id)
+    console.log(products)
     if (products) {
+      products = products.filter(product => product.user_id === this.props.user.id)
+
       // We have products!
       if (products.length) {
         // We have products to display
         productHtml = products.map(product => (
           <li key={product.id}>
-            <h4>{`${product.name}`}</h4>
+            <Link to={`/products/${product.id}`}>{product.name}</Link>
             <h4>Price:{`${product.price}`}$</h4>
             <h5>Description{`${product.description}`}</h5>
           </li>
         ))
       } else {
         // We have 0 products
-        productHtml = 'Sorry, there\'s no products. Go make some!'
+        productHtml =
+        <div>
+          <h4>Your Tigris store is empty, Please <Link to="/create-product">Add Product</Link></h4>
+        </div>
       }
     } else {
       // We are still waiting for our state to change (api)
@@ -49,7 +55,6 @@ class MyProducts extends Component {
 
     return (
       <Layout>
-        <h4>Products Page</h4>
         <ul>
           {productHtml}
         </ul>
@@ -58,4 +63,4 @@ class MyProducts extends Component {
   }
 }
 
-export default MyProducts
+export default MyStore

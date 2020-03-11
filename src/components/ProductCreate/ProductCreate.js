@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import messages from '../AutoDismissAlert/messages'
 
 import apiUrl from '../../apiConfig'
 import ProductForm from '../Shared/ProductForm'
@@ -36,7 +37,14 @@ const ProductCreate = props => {
   }
 
   if (createdProductId) {
-    return <Redirect to={'/products'} />
+    return (
+      props.msgAlert({
+        heading: 'Product created succesfully',
+        message: messages.productCreated,
+        variant: 'success'
+      }),
+      <Redirect to={'/products'} />
+    )
   }
 
   return (

@@ -13,6 +13,7 @@ import ShowProduct from '../ShowProduct/ShowProduct'
 import IndexProducts from '../IndexProducts/IndexProducts'
 import ProductCreate from '../ProductCreate/ProductCreate'
 import ProductEdit from '../ProductEdit/ProductEdit'
+import MyStore from '../MyStore/MyStore'
 
 class App extends Component {
   constructor () {
@@ -48,7 +49,14 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/products' component= {IndexProducts} />
-          <Route exact path='/products/:id' component={ShowProduct} />
+          <AuthenticatedRoute user={user} exact path="/products/:id" render={({ match }) => (
+            < ShowProduct msgAlert={this.msgAlert} user={user} match={match}/>
+          )}/>
+
+          <AuthenticatedRoute user={user} exact path="/my-store" render={({ match }) => (
+            < MyStore msgAlert={this.msgAlert} user={user} match={match}/>
+          )}/>
+
           <AuthenticatedRoute user={user} exact path="/create-product" render={() => (
             < ProductCreate msgAlert={this.msgAlert} user={user}/>
           )}/>

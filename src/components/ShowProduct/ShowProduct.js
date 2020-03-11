@@ -14,7 +14,7 @@ const Product = (props) => {
       .then(res => setProduct(res.data.product))
       .catch(console.error)
   }, [])
-
+  console.log(product)
   const destroy = () => {
     axios({
       url: `${apiUrl}/products/${props.match.params.id}`,
@@ -33,7 +33,7 @@ const Product = (props) => {
 
   if (deleted) {
     return <Redirect to={
-      { pathname: '/', state: { msg: 'Product succesfully deleted!' } }
+      { pathname: '/my-store', state: { msg: 'Product succesfully deleted!' } }
     } />
   }
 
