@@ -43,7 +43,7 @@ const ProductCreate = props => {
         message: messages.productCreated,
         variant: 'success'
       }),
-      <Redirect to={'/products'} />
+      <Redirect to={'/my-store'} />
     )
   }
 

@@ -6,5 +6,8 @@ export default {
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
-  productCreated: 'Your product is available for purchase.'
+  productCreated: 'Your product is available for purchase.',
+  productUpdated: 'Your product is available for purchase.',
+  productDeleted: 'Your product is no longer for purchase.'
+
 }

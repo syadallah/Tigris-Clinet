@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import Layout from '../Shared/Layout'
+import messages from '../AutoDismissAlert/messages'
 
 const Product = (props) => {
   const [product, setProduct] = useState(null)
@@ -32,9 +33,14 @@ const Product = (props) => {
   }
 
   if (deleted) {
-    return <Redirect to={
-      { pathname: '/my-store', state: { msg: 'Product succesfully deleted!' } }
-    } />
+    return (
+      props.msgAlert({
+        heading: 'Product deleted succesfully',
+        message: messages.productDeleted,
+        variant: 'success'
+      }),
+      <Redirect to={'/my-store'} />
+    )
   }
 
   return (

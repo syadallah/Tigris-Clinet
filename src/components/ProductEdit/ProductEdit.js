@@ -5,6 +5,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ProductForm from '../Shared/ProductForm'
 import Layout from '../Shared/Layout'
+import messages from '../AutoDismissAlert/messages'
 
 const ProductEdit = props => {
   const [product, setproduct] = useState({ name: '', description: '', price: '' })
@@ -37,7 +38,14 @@ const ProductEdit = props => {
   }
 
   if (updated) {
-    return <Redirect to={`/products/${props.match.params.id}`} />
+    return (
+      props.msgAlert({
+        heading: 'Product updated succesfully',
+        message: messages.productUpdated,
+        variant: 'success'
+      }),
+      <Redirect to={`/products/${props.match.params.id}`} />
+    )
   }
 
   return (
