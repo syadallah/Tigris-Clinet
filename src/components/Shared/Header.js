@@ -23,7 +23,7 @@ const unauthenticatedOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="dark" variant="light" expand="md">
+  <Navbar sticky="top" bg="dark" variant="light" expand="md">
     <Navbar.Brand href="#">
       Tigris
     </Navbar.Brand>
