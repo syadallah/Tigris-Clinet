@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Layout from '../Shared/Layout'
-import styles from './IndexProducts.scss'
 
 class Products extends Component {
   constructor () {
@@ -34,11 +33,11 @@ class Products extends Component {
       if (products.length) {
         // We have products to display
         productHtml = products.map(product => (
-          <div className= {styles.contain} key={product.id}>
-            <div className={styles.product}>
+          <div className= "container" key={product.id}>
+            <div className='product'>
               <h2 className='header'>{`${product.name}`}</h2>
               <h6 className='description'>Description{`${product.description}`}</h6>
-              <h6 className='price'>Price:{`${product.price}`}$</h6>
+              <h6 className='price'> Price:{`${product.price}`}$</h6>
             </div>
           </div>
         ))

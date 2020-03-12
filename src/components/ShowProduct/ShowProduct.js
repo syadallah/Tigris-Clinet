@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
@@ -45,16 +46,15 @@ const Product = (props) => {
 
   return (
     <Layout>
-      <h4>{product.name}</h4>
-      <p>Price: {product.price}$</p>
-      <p>Description: {product.description}</p>
-      <button onClick={destroy}>Delete Product</button>
-      <Link to={`/products/${props.match.params.id}/edit`}>
-        <button>Edit</button>
-        <br></br>
-        <br></br>
-      </Link>
-      <Link to="/products">See more products</Link>
+      <div className="product">
+        <h2 className="header">{product.name}</h2>
+        <h6 className="description">Description: {product.description}</h6>
+        <h6 className="price">Price: {product.price}$</h6>
+        <Button variant="danger" size="sm" onClick={destroy}>Delete Product</Button>
+        <Link to={`/products/${props.match.params.id}/edit`}>
+          <Button variant="primary" size="sm" style={{ margin: 10 }}>Edit</Button>
+        </Link>
+      </div>
     </Layout>
   )
 }

@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Home.scss'
+import './Home.scss'
 const Home = () => (
-  <Fragment className= {styles.body}>
+  <Fragment>
     <h1>
 Tigris
     </h1>

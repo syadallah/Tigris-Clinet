@@ -35,11 +35,13 @@ class MyStore extends Component {
       if (products.length) {
         // We have products to display
         productHtml = products.map(product => (
-          <li key={product.id}>
-            <Link to={`/products/${product.id}`}>{product.name}</Link>
-            <h4>Price:{`${product.price}`}$</h4>
-            <h5>Description{`${product.description}`}</h5>
-          </li>
+          <div className= "container" key={product.id}>
+            <div className='product'>
+              <Link to={`/products/${product.id}`}>{product.name}</Link>
+              <h6 className='description'>Description{`${product.description}`}</h6>
+              <h6 className='price'>Price:{`${product.price}`}$</h6>
+            </div>
+          </div>
         ))
       } else {
         // We have 0 products

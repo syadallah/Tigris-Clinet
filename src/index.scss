@@ -1,1 +1,43 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
+}
+.container {
+	flex: 1;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+}
+.product {
+	  overflow-wrap: break-word;
+    word-wrap: break-word;
+	  background-color: #fff;
+		border-radius: 8px;
+		border-width: 10px;
+		border-color: #343A40;
+		margin: 20px;
+		padding: 15px;
+	}
+.header {
+			text-align: left;
+			color: #000;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 4px;
+		}
+.description {
+			text-align: left;
+			font-size: 15px;
+			color: #000;
+			max-height: 50px;
+			overflow: hidden;
+  	}
+.price {
+			text-align: right;
+			font-size: 18px;
+			color: #000;
+			margin-top: 6px;
+		}

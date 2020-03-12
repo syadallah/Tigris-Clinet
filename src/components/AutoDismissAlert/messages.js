@@ -8,6 +8,6 @@ export default {
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
   productCreated: 'Your product is available for purchase.',
   productUpdated: 'Your product is available for purchase.',
-  productDeleted: 'Your product is no longer for purchase.'
+  productDeleted: 'Your product is no longer available for purchase.'
 
 }

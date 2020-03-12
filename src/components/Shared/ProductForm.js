@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 import { Col } from 'react-bootstrap'
 
 const ProductForm = ({ product, handleChange, handleSubmit }) => (
@@ -40,7 +41,7 @@ const ProductForm = ({ product, handleChange, handleSubmit }) => (
             as="textarea"
             rows="3" />
         </Form.Group>
-        <button type="submit">Submit</button>
+        <Button variant="outline-primary" type="submit">Submit</Button>
       </Form>
     </div>
   </div>
