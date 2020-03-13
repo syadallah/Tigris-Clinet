@@ -6,12 +6,12 @@ import { Col } from 'react-bootstrap'
 const ProductForm = ({ product, handleChange, handleSubmit }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
-      <Form style={{ color: '#000' }}
+      <Form
         onSubmit={handleSubmit}>
         <Form.Row>
           <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
             <Form.Label>Product</Form.Label>
-            <Form.Control
+            <Form.Control className='form'
               name="name"
               placeholder="Product"
               value={product.name}
@@ -21,7 +21,7 @@ const ProductForm = ({ product, handleChange, handleSubmit }) => (
           </Form.Group>
           <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
             <Form.Label>Price</Form.Label>
-            <Form.Control
+            <Form.Control className='form'
               name="price"
               placeholder="$"
               value={product.price}
@@ -32,7 +32,7 @@ const ProductForm = ({ product, handleChange, handleSubmit }) => (
         </Form.Row>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>Description</Form.Label>
-          <Form.Control
+          <Form.Control className='form'
             name="description"
             placeholder="PLease write a product description..."
             value={product.description}

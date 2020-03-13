@@ -3,12 +3,10 @@ body {
   font-family: 'Raleway', sans-serif;
   background-image: url(https://i.imgur.com/ARrfyte.jpg);
   background-color: #F4F8F7;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
-  max-width: 100%;
-  height: 100%;
-  overflow: scroll;
+  background-origin: border-box;
 }
 
 h1 {
@@ -18,16 +16,16 @@ h1 {
   color: #dc3545;
   font-size: 60px;
   font-weight: bold;
-  margin: 100px auto 50px;
+  margin: 70px auto;
 }
 
-.btn {
+.startShopping {
   font-family: "Montserrat";
   margin: 50px auto;
 }
 h2 {
   font-family: "Montserrat";
-}
+  }
 @-webkit-keyframes bounce-in-top {
   0% {
     -webkit-transform: translateY(-500px);

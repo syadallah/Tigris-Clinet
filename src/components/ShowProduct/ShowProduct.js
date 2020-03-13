@@ -48,11 +48,11 @@ const Product = (props) => {
     <Layout>
       <div className="product">
         <h2 className="header">{product.name}</h2>
-        <h6 className="description">Description: {product.description}</h6>
-        <h6 className="price">Price: {product.price}$</h6>
+        <h6 className="description">{product.description}</h6>
+        <h6 className="price">{product.price}$</h6>
         <Button variant="danger" size="sm" onClick={destroy}>Delete Product</Button>
         <Link to={`/products/${props.match.params.id}/edit`}>
-          <Button variant="primary" size="sm" style={{ margin: 10 }}>Edit</Button>
+          <Button variant="primary" size="sm" style={{ marginLeft: 4 }}>Edit</Button>
         </Link>
       </div>
     </Layout>
