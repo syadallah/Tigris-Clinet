@@ -2,6 +2,9 @@
 
 ### links:
 [Website](https://syadallah.github.io/Tigris-Clinet/#/) \
+ Demo emails \
+ Email: o@o \
+ Password: o \
 [Deployed API](https://tigris-101.herokuapp.com/) \
 [GitHub API](https://github.com/syadallah/Tigris-API)
 
