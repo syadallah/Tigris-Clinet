@@ -30,21 +30,16 @@ class Products extends Component {
 
     if (products) {
       // We have products!
-      if (products.length) {
-        // We have products to display
-        productHtml = products.map(product => (
-          <div className= "container" key={product.id}>
-            <div className='product'>
-              <h2 className='header'>{`${product.name}`}</h2>
-              <h6 className='description'>{`${product.description}`}</h6>
-              <h6 className='price'>{`${product.price}`} $</h6>
-            </div>
+
+      productHtml = products.map(product => (
+        <div className= "container" key={product.id}>
+          <div className='product'>
+            <h2 className='header'>{`${product.name}`}</h2>
+            <h6 className='description'>{`${product.description}`}</h6>
+            <h6 className='price'>{`${product.price}`} $</h6>
           </div>
-        ))
-      } else {
-        // We have 0 products
-        productHtml = 'Sorry, there\'s no products. Go make some!'
-      }
+        </div>
+      ))
     } else {
       // We are still waiting for our state to change (api)
       productHtml = 'Loading...'
