@@ -17,8 +17,9 @@ class Products extends Component {
     // This is where the API request goes
     axios(`${apiUrl}/products`)
       .then(res => {
-        this.setState({ products: res.data.products })
-        console.log(this.state)
+        this.setState({ products: res.data.products }, () => {
+          console.log(this.state)
+        })
       })
       .catch(console.error)
   }
