@@ -47,3 +47,8 @@
 .productForm {
 	float: left;
 }
+@media (min-width: 330px) {
+   .mr-sm-2 {
+		width: 175px;
+	}
+}
