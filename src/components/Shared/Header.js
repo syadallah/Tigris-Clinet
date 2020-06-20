@@ -29,6 +29,7 @@ const Header = ({ user }) => (
       <FormControl type="text" placeholder="Search Product.." className="mr-sm-2" />
       <Button variant="outline-danger">Search</Button>
     </Form>
+
     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
