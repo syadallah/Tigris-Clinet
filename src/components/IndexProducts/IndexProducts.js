@@ -33,8 +33,8 @@ class Products extends Component {
   //  const { products } = this.state
 
     let productHtml
-    let searchProduct = []
-
+    let productHtmlSearch
+    let productSearch
     if (this.state.products) {
       // We have products!
 
@@ -52,22 +52,25 @@ class Products extends Component {
       productHtml = 'Loading...'
     }
     const handleChange = event => {
-      this.setState({ value: [event.target.value] })
+      this.setState({ value: event.target.value })
     }
     const handleSubmit = event => {
-      searchProduct = searchProduct.push(this.state.value)
-      console.log(searchProduct)
-      productHtml = searchProduct.map(product => (
-        <div className= 'container' key={product.id}>
-          <div className='product'>
-            <h2 className='header'>{`${product.name}`}</h2>
-            <h6 className='description'>{`${product.description}`}</h6>
-            <h6 className='price'>{`${product.price}`} $</h6>
+      console.log(this.state.value)
+      productHtmlSearch = this.state.products.filter(product => product.name === this.state.value)
+      if (productHtmlSearch) {
+        productHtml = []
+        console.log(productHtml)
+        productSearch = productHtmlSearch.map(product => (
+          <div key={product.id}>
+            <div className='product'>
+              <h2 className='header'>{`${product.name}`}</h2>
+              <h6 className='description'>{`${product.description}`}</h6>
+              <h6 className='price'>{`${product.price}`} $</h6>
+            </div>
           </div>
-        </div>
-      ))
+        ))
+      }
     }
-
     return (
       <Layout>
         <Form
@@ -88,6 +91,7 @@ class Products extends Component {
         </Form>
 
         <ul>
+          {productSearch}
           {productHtml}
         </ul>
       </Layout>
