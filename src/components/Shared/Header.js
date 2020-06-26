@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { Form, FormControl, Button } from 'react-bootstrap'
 
 const authenticatedOptions = (
   <Fragment>
@@ -25,11 +24,6 @@ const unauthenticatedOptions = (
 
 const Header = ({ user }) => (
   <Navbar sticky="top" bg="dark" variant="light" expand="md">
-    <Form inline className='productForm'>
-      <FormControl type="text" placeholder="Search Product.." className="mr-sm-2" />
-      <Button variant="outline-danger">Search</Button>
-    </Form>
-
     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">

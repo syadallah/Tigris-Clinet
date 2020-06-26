@@ -56,7 +56,7 @@ class Products extends Component {
     }
     const handleSubmit = event => {
       console.log(this.state.value)
-      productHtmlSearch = this.state.products.filter(product => product.name === this.state.value)
+      productHtmlSearch = this.state.products.filter(product => this.state.products.name === this.state.value)
       if (productHtmlSearch) {
         productHtml = []
         console.log(productHtml)
