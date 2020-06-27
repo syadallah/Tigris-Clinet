@@ -22,8 +22,9 @@ const unauthenticatedOptions = (
 
 )
 
-const Header = ({ user }) => (
+const Header = ({ user }, props) => (
   <Navbar sticky="top" bg="dark" variant="light" expand="md">
+
     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
