@@ -36,6 +36,9 @@ class Products extends Component {
     let productSearch
     const handleChange = event => {
       this.setState({ value: event.target.value })
+      productSearch = this.state.products.filter(product => (
+        product.includes(event.target.value)
+      ))
       console.log(this.state.value)
     }
 
